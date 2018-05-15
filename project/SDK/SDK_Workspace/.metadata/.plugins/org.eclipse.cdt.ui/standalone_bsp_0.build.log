@@ -1,0 +1,6 @@
+11:34:59 **** Auto Build of project standalone_bsp_0 ****
+make -k all 
+'Finished building libraries'
+
+11:34:59 Build Finished (took 109ms)
+

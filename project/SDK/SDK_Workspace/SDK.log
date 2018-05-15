@@ -1,0 +1,138 @@
+12:03:39.889 ERROR - Unexpected error while obtaining referenced H/W project {} org.eclipse.core.internal.resources.ResourceException: Resource '/project_hw_platform' does not exist.
+	at org.eclipse.core.internal.resources.Resource.checkExists(Resource.java:341)
+	at org.eclipse.core.internal.resources.Resource.checkAccessible(Resource.java:215)
+
+12:03:39.904 ERROR - The Hardware Project referenced by this BSP (standalone_bsp_0) was not found in this workspace. As a result, this BSP will not build properly. To fix this error, please import the associated hardware project or recreate a new BSP targeting an existing hardware platform. 
+12:04:01.557 ERROR - Unexpected error while obtaining referenced H/W project {} org.eclipse.core.internal.resources.ResourceException: Resource '/project_hw_platform' does not exist.
+	at org.eclipse.core.internal.resources.Resource.checkExists(Resource.java:341)
+	at org.eclipse.core.internal.resources.Resource.checkAccessible(Resource.java:215)
+
+11:01:52.173 INFO  - Processing command line option -hwspec D:\RA60-2015\8-bit-MIDI\project\SDK\SDK_Export\hw\system.xml. 
+11:02:52.236 ERROR - FPGA Configuration failed.Connection to Board Failed
+
+Failed to Scan JTAG Chain
+    Unknown Error
+ 
+11:03:30.802 INFO  - FPGA configured successfully with bitstream "D:/RA60-2015/8-bit-MIDI/project/SDK/SDK_Workspace/project_hw_platform/download.bit" 
+11:04:26.416 INFO  - FPGA configured successfully with bitstream "D:/RA60-2015/8-bit-MIDI/project/SDK/SDK_Workspace/project_hw_platform/download.bit" 
+11:05:20.427 INFO  - FPGA configured successfully with bitstream "D:/RA60-2015/8-bit-MIDI/project/SDK/SDK_Workspace/project_hw_platform/download.bit" 
+11:05:52.424 ERROR - Unexpected error while launching program. com.xilinx.sdk.targetmanager.TMException: MicroBlaze is under RESET. Check if the Reset input to MicroBlaze and its Bus Interfaces are connected properly
+    UNABLE to STOP MicroBlaze
+
+	at com.xilinx.sdk.targetmanager.internal.TM.connectToProcessor(Unknown Source)
+	at com.xilinx.sdk.debug.core.internal.AppRunner.run(Unknown Source)
+
+11:07:03.250 ERROR - Unexpected error while launching program. com.xilinx.sdk.targetmanager.TMException: MicroBlaze is under RESET. Check if the Reset input to MicroBlaze and its Bus Interfaces are connected properly
+    UNABLE to STOP MicroBlaze
+
+	at com.xilinx.sdk.targetmanager.internal.TM.connectToProcessor(Unknown Source)
+	at com.xilinx.sdk.debug.core.internal.AppRunner.run(Unknown Source)
+
+11:07:09.022 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+11:07:20.444 INFO  - Processing command line option -hwspec D:\RA60-2015\8-bit-MIDI\project\SDK\SDK_Export\hw\system.xml. 
+11:07:32.519 ERROR - Unexpected error while launching program. com.xilinx.sdk.targetmanager.TMException: MicroBlaze is under RESET. Check if the Reset input to MicroBlaze and its Bus Interfaces are connected properly
+    UNABLE to STOP MicroBlaze
+
+	at com.xilinx.sdk.targetmanager.internal.TM.connectToProcessor(Unknown Source)
+	at com.xilinx.sdk.debug.core.internal.AppRunner.run(Unknown Source)
+
+11:07:50.634 INFO  - FPGA configured successfully with bitstream "D:/RA60-2015/8-bit-MIDI/project/SDK/SDK_Workspace/project_hw_platform/download.bit" 
+11:07:58.948 ERROR - Unexpected error while launching program. com.xilinx.sdk.targetmanager.TMException: MicroBlaze is under RESET. Check if the Reset input to MicroBlaze and its Bus Interfaces are connected properly
+    UNABLE to STOP MicroBlaze
+
+	at com.xilinx.sdk.targetmanager.internal.TM.connectToProcessor(Unknown Source)
+	at com.xilinx.sdk.debug.core.internal.AppRunner.run(Unknown Source)
+
+11:10:34.988 ERROR - FPGA Configuration failed.Failed to download the bit file
+
+    DONE bit didn't go HIGH after programming FPGA
+ 
+11:10:59.342 ERROR - FPGA Configuration failed.Failed to download the bit file
+
+    DONE bit didn't go HIGH after programming FPGA
+ 
+11:12:55.071 ERROR - FPGA Configuration failed.Connection to Board Failed
+
+Failed to Scan JTAG Chain
+    Unknown Error
+ 
+11:13:25.037 ERROR - FPGA Configuration failed.Connection to Board Failed
+
+Failed to Scan JTAG Chain
+    Unknown Error
+ 
+11:14:45.282 ERROR - FPGA Configuration failed.Connection to Board Failed
+
+Failed to Scan JTAG Chain
+    Unknown Error
+ 
+11:15:45.693 ERROR - FPGA Configuration failed.Connection to Board Failed
+
+
+    Failed to Open JTAG Cable
+    Cable target is not connected to the host
+ 
+11:16:01.152 ERROR - FPGA Configuration failed.Connection to Board Failed
+
+
+    Failed to Open JTAG Cable
+    Cable target is not connected to the host
+ 
+11:17:20.530 ERROR - FPGA Configuration failed.Failed to download the bit file
+
+    DONE bit didn't go HIGH after programming FPGA
+ 
+11:17:39.595 ERROR - FPGA Configuration failed.Failed to download the bit file
+
+    DONE bit didn't go HIGH after programming FPGA
+ 
+11:19:03.366 ERROR - FPGA Configuration failed.Failed to download the bit file
+
+    DONE bit didn't go HIGH after programming FPGA
+ 
+11:20:07.313 ERROR - FPGA Configuration failed.Failed to download the bit file
+
+    DONE bit didn't go HIGH after programming FPGA
+ 
+11:22:27.414 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+11:27:54.201 INFO  - Processing command line option -hwspec D:\RA60-2015\8-bit-MIDI\project\SDK\SDK_Export\hw\system.xml. 
+11:27:55.184 INFO  - The hardware specification for project 'basic_system_hw_platform' is different from D:\RA60-2015\8-bit-MIDI\project\SDK\SDK_Export\hw\system.xml. 
+11:27:55.184 INFO  - Copied contents of D:\RA60-2015\8-bit-MIDI\project\SDK\SDK_Export\hw\system.xml into \basic_system_hw_platform\system.xml. 
+11:27:55.200 INFO  - Copied contents of D:\RA60-2015\8-bit-MIDI\project\SDK\SDK_Export\hw\system.bit into \basic_system_hw_platform\system.bit. 
+11:27:55.200 INFO  - Copied contents of D:\RA60-2015\8-bit-MIDI\project\SDK\SDK_Export\hw\system_bd.bmm into \basic_system_hw_platform\system_bd.bmm. 
+11:27:55.590 INFO  - Synchronizing projects in the workspace with the hardware platform specification changes. 
+11:27:56.869 INFO  - Updating MSS for Board Support Package Project: hello_world_bsp.
+		 The following driver assignments were removed:
+			Peripheral Instance: rs232, driver: uartlite_v2_01_a.
+			Peripheral Instance: vga_periph_mem_0, driver: generic_v1_00_a.
+		 The following parameters were removed:
+			Component: standalone_v3_10_a, parameter: stdin.
+			Component: standalone_v3_10_a, parameter: stdout.
+		 The following new driver assignments were made:
+			Peripheral Instance: axi_intc_0, driver: intc_v2_06_a.
+			Peripheral Instance: buzzer_per_0, driver: generic_v1_00_a.
+ 
+11:27:56.916 INFO  - Clearing existing target manager status. 
+11:27:59.241 INFO  - Workspace synchronized with the new hardware specification file. Cleaning dependent projects... 
+11:28:49.351 ERROR - FPGA Configuration failed.Connection to Board Failed
+
+Failed to Scan JTAG Chain
+    Unknown Error
+ 
+11:29:13.457 ERROR - FPGA Configuration failed.Failed to download the bit file
+
+    DONE bit didn't go HIGH after programming FPGA
+ 
+11:29:52.925 ERROR - SDK has detected that project basic_system_hw_platform has been deleted (or renamed).
+This project was referenced by a BSP project, which will now fail to compile properly.
+
+We recommend that you create a new BSP project pointing to a valid hardware project. Alternatively, you can fix the project references in the BSP, and update the path to the hardware specification file in 'libgen.options', and in ELF check options in dependant applications. 
+11:31:57.356 INFO  - FPGA configured successfully with bitstream "D:/RA60-2015/8-bit-MIDI/project/SDK/SDK_Workspace/project_hw_platform/download.bit" 
+11:34:06.702 INFO  - FPGA configured successfully with bitstream "D:/RA60-2015/8-bit-MIDI/project/SDK/SDK_Workspace/project_hw_platform/download.bit" 
+11:34:58.823 INFO  - FPGA configured successfully with bitstream "D:/RA60-2015/8-bit-MIDI/project/SDK/SDK_Workspace/project_hw_platform/download.bit" 
+11:37:31.681 ERROR - FPGA Configuration failed.Connection to Board Failed
+
+Failed to Scan JTAG Chain
+    Unknown Error
+ 
+12:22:01.251 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item value="D:\RA60-2015\8-bit-MIDI\project\SDK\SDK_Workspace\project_hw_platform\system_bd.bmm" key="project_hw_platform-bmmFile"/>
+	<item value="D:\RA60-2015\8-bit-MIDI\project\SDK\SDK_Workspace\project_hw_platform\system.bit" key="project_hw_platform-bitFile"/>
+	<item value="D:\RA60-2015\8-bit-MIDI\project\SDK\SDK_Workspace\bzzz\Debug\bzzz.elf" key="project_hw_platform-microblaze_0-initElf"/>
+</section>

@@ -1,0 +1,15 @@
+D:\RA60-2015\8-bit-MIDI\project\implementation\system.ngc 1525769975
+D:/RA60-2015/8-bit-MIDI/project/implementation/system_proc_sys_reset_0_wrapper.ngc 1525769859
+D:/RA60-2015/8-bit-MIDI/project/implementation/system_clock_generator_0_wrapper.ngc 1525769962
+D:/RA60-2015/8-bit-MIDI/project/implementation/system_microblaze_0_ilmb_wrapper.ngc 1525769954
+D:/RA60-2015/8-bit-MIDI/project/implementation/system_microblaze_0_dlmb_wrapper.ngc 1525769956
+D:/RA60-2015/8-bit-MIDI/project/implementation/system_axi4lite_0_wrapper.ngc 1525769964
+D:/RA60-2015/8-bit-MIDI/project/implementation/system_microblaze_0_wrapper.ngc 1525769959
+D:/RA60-2015/8-bit-MIDI/project/implementation/system_microblaze_0_i_bram_ctrl_wrapper.ngc 1525769869
+D:/RA60-2015/8-bit-MIDI/project/implementation/system_microblaze_0_d_bram_ctrl_wrapper.ngc 1525769877
+D:/RA60-2015/8-bit-MIDI/project/implementation/system_axi_intc_0_wrapper.ngc 1525769944
+D:/RA60-2015/8-bit-MIDI/project/implementation/system_debug_module_wrapper.ngc 1525769917
+D:/RA60-2015/8-bit-MIDI/project/implementation/system_buzzer_per_0_wrapper.ngc 1525769938
+D:/RA60-2015/8-bit-MIDI/project/implementation/system_my_peripheral_0_wrapper.ngc 1525769950
+D:/RA60-2015/8-bit-MIDI/project/implementation/system_microblaze_0_bram_block_wrapper.ngc 1525769882
+OK

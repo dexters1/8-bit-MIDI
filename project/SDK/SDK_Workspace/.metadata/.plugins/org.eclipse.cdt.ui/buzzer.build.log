@@ -1,0 +1,6 @@
+11:07:54 **** Incremental Build of configuration Debug for project buzzer ****
+make all 
+make: Ništa za napraviti za `all'.
+
+11:07:55 Build Finished (took 141ms)
+
