@@ -100,6 +100,9 @@ entity user_logic is
     --USER ports added here
 	out_pwm: out std_logic;
 	my_timer_irq: out std_logic;
+	  o_strobe : out  STD_LOGIC;
+	  o_clk : out  STD_LOGIC;
+	  o_data : out  STD_LOGIC_vector;
 	
     -- ADD USER PORTS ABOVE THIS LINE ------------------
 
@@ -145,6 +148,16 @@ architecture IMP of user_logic is
            o_irq : out  STD_LOGIC);
  end component;
 
+
+ component DAC_8_bit
+	port ( i_clk : in  STD_LOGIC;
+			  i_reg: in std_logic_vector( 31 downto 0);
+           in_rst : in  STD_LOGIC;
+           o_strobe : out  STD_LOGIC;
+           o_clk : out  STD_LOGIC;
+           o_data : out  STD_LOGIC
+	);
+ end component;
   ------------------------------------------
   -- Signals for user logic slave model s/w accessible register example
   ------------------------------------------
@@ -161,6 +174,10 @@ architecture IMP of user_logic is
   signal slv_ip2bus_data                : std_logic_vector(C_SLV_DWIDTH-1 downto 0);
   signal slv_read_ack                   : std_logic;
   signal slv_write_ack                  : std_logic;
+  
+  signal s_strobe : std_logic := '0';
+  signal s_clk: std_logic := '0';
+  signal s_data: std_logic;
 
 begin
 
@@ -177,6 +194,17 @@ begin
 		i_bus2ip_rst=>Bus2IP_Resetn,
         o_pwm=>out_pwm,
         o_irq=>my_timer_irq
+	);
+	
+	DAC_8_bit_0: DAC_8_bit
+	
+	port map (
+		i_clk => Bus2IP_Clk,
+		in_rst => Bus2IP_Resetn,
+		i_reg => slv_reg4,
+		o_strobe => s_strobe,
+		o_clk => s_clk,
+		o_data => s_data
 	);
 
   ------------------------------------------

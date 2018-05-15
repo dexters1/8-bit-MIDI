@@ -140,6 +140,9 @@ entity buzzer_per is
     --USER ports added here
 	out_pwm: out std_logic;
 	my_timer_irq: out std_logic;	
+	o_strobe : out  STD_LOGIC;
+	o_clk : out  STD_LOGIC;
+	o_data : out  STD_LOGIC;
     -- ADD USER PORTS ABOVE THIS LINE ------------------
 
     -- DO NOT EDIT BELOW THIS LINE ---------------------

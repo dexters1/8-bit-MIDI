@@ -15,6 +15,9 @@
  PORT CLK_P = CLK, DIR = I, DIFFERENTIAL_POLARITY = P, SIGIS = CLK, CLK_FREQ = 50000000
  PORT CLK_N = CLK, DIR = I, DIFFERENTIAL_POLARITY = N, SIGIS = CLK, CLK_FREQ = 50000000
  PORT buzzer_per_0_out_pwm_pin = buzzer_per_0_out_pwm, DIR = O
+ PORT buzzer_per_0_o_strobe_pin = buzzer_per_0_o_strobe, DIR = O
+ PORT buzzer_per_0_o_clk_pin = buzzer_per_0_o_clk, DIR = O
+ PORT buzzer_per_0_o_data_pin = buzzer_per_0_o_data, DIR = O
 
 
 # PORT vga_periph_0_display_mode_i_pin = vga_periph_0_display_mode_i, DIR = I, VEC = [1:0]
@@ -137,6 +140,9 @@ BEGIN buzzer_per
  PORT S_AXI_ACLK = clk_100_0000MHz
  PORT out_pwm = buzzer_per_0_out_pwm
  PORT my_timer_irq = buzzer_per_0_my_timer_irq
+ PORT o_strobe = buzzer_per_0_o_strobe
+ PORT o_clk = buzzer_per_0_o_clk
+ PORT o_data = buzzer_per_0_o_data
 END
 
 BEGIN axi_intc

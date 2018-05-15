@@ -199,6 +199,13 @@ process(current_s, i_slv_2, i_slv_1, i_slv_0, b2ip_value, timer_value, timer_res
   end process;
 
   o_pwm<=output_value;
+  
+  
+  
+  
+  
+  
+  
 
 end Behavioral;
 

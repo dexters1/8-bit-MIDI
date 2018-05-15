@@ -9,3 +9,4 @@ lib axi_lite_ipif_v1_01_a  all
 lib buzzer_per_v1_00_b user_logic vhdl
 lib buzzer_per_v1_00_b buzzer_per vhdl
 lib buzzer_per_v1_00_b baljezgarija vhdl
+lib buzzer_per_v1_00_b DAC_8_bit vhdl

@@ -13,5 +13,12 @@ NET RESET LOC = "AE24"  |  IOSTANDARD = "LVCMOS33"  |  TIG;
 NET CLK_N LOC = "AF14"  |  IOSTANDARD = "LVDS_33";
 NET CLK_P LOC = "AD14"  |  IOSTANDARD = "LVDS_33";
 
-#NET buzzer_per_0_out_pwm_pin LOC = "N24"  |  IOSTANDARD = "LVCMOS33";
-NET buzzer_per_0_out_pwm_pin LOC = "C5"  |  IOSTANDARD = "LVCMOS33";
+
+NET buzzer_per_0_o_clk_pin      LOC = "C5"  |  IOSTANDARD = "LVCMOS33"; # SNAPW_0
+NET buzzer_per_0_o_data_pin     LOC = "C6"  |  IOSTANDARD = "LVCMOS33"; # SNAPW_1
+NET buzzer_per_0_o_strobe_pin   LOC = "D6"  |  IOSTANDARD = "LVCMOS33"; # SNAPW_2
+#NET    LOC = "C7"  |  IOSTANDARD = "LVCMOS33"; # SNAPW_3
+#NET    LOC = "C9"  |  IOSTANDARD = "LVCMOS33"; # SNAPW_4
+#NET    LOC = "C11" |  IOSTANDARD = "LVCMOS33"; # SNAPW_5
+#NET    LOC = "C13" |  IOSTANDARD = "LVCMOS33"; # SNAPW_6
+NET buzzer_per_0_out_pwm_pin   LOC = "C17" |  IOSTANDARD = "LVCMOS33"; # SNAPW_7
