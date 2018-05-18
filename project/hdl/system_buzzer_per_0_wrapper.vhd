@@ -32,7 +32,10 @@ entity system_buzzer_per_0_wrapper is
     S_AXI_BVALID : out std_logic;
     S_AXI_AWREADY : out std_logic;
     out_pwm : out std_logic;
-    my_timer_irq : out std_logic
+    my_timer_irq : out std_logic;
+    o_strobe : out std_logic;
+    o_clk : out std_logic;
+    o_data : out std_logic
   );
 end system_buzzer_per_0_wrapper;
 
@@ -74,7 +77,10 @@ architecture STRUCTURE of system_buzzer_per_0_wrapper is
       S_AXI_BVALID : out std_logic;
       S_AXI_AWREADY : out std_logic;
       out_pwm : out std_logic;
-      my_timer_irq : out std_logic
+      my_timer_irq : out std_logic;
+      o_strobe : out std_logic;
+      o_clk : out std_logic;
+      o_data : out std_logic
     );
   end component;
 
@@ -116,7 +122,10 @@ begin
       S_AXI_BVALID => S_AXI_BVALID,
       S_AXI_AWREADY => S_AXI_AWREADY,
       out_pwm => out_pwm,
-      my_timer_irq => my_timer_irq
+      my_timer_irq => my_timer_irq,
+      o_strobe => o_strobe,
+      o_clk => o_clk,
+      o_data => o_data
     );
 
 end architecture STRUCTURE;

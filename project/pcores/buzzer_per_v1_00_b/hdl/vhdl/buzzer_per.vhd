@@ -310,6 +310,10 @@ begin
 	  
 	  out_pwm=>out_pwm,
 	  my_timer_irq=>my_timer_irq,
+	  o_strobe => o_strobe,
+	  o_clk => o_clk,
+	  o_data => o_data,
+	  
       -- MAP USER PORTS ABOVE THIS LINE ------------------
 
       Bus2IP_Clk                     => ipif_Bus2IP_Clk,

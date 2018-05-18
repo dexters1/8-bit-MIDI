@@ -1,5 +1,5 @@
 
-<EDKSYSTEM EDKVERSION="14.6" EDWVERSION="1.2" TIMESTAMP="Tue May 08 10:57:18 2018">
+<EDKSYSTEM EDKVERSION="14.6" EDWVERSION="1.2" TIMESTAMP="Fri May 18 11:23:04 2018">
 
   <SYSTEMINFO ARCH="spartan6" DEVICE="xc6slx45" PACKAGE="fgg676" PART="xc6slx45fgg676-2" SOURCE="D:/RA60-2015/8-bit-MIDI/project/system.xmp" SPEEDGRADE="-2"/>
 
@@ -23,6 +23,21 @@
     <PORT DIR="O" MHS_INDEX="3" NAME="buzzer_per_0_out_pwm_pin" SIGNAME="buzzer_per_0_out_pwm">
       <CONNECTIONS>
         <CONNECTION INSTANCE="buzzer_per_0" PORT="out_pwm"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" MHS_INDEX="4" NAME="buzzer_per_0_o_strobe_pin" SIGNAME="buzzer_per_0_o_strobe">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="buzzer_per_0" PORT="o_strobe"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" MHS_INDEX="5" NAME="buzzer_per_0_o_clk_pin" SIGNAME="buzzer_per_0_o_clk">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="buzzer_per_0" PORT="o_clk"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" MHS_INDEX="6" NAME="buzzer_per_0_o_data_pin" SIGNAME="buzzer_per_0_o_data">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="buzzer_per_0" PORT="o_data"/>
       </CONNECTIONS>
     </PORT>
   </EXTERNALPORTS>
@@ -6451,6 +6466,21 @@
         <PORT DIR="O" IS_INSTANTIATED="TRUE" MHS_INDEX="2" MPD_INDEX="20" NAME="my_timer_irq" SENSITIVITY="EDGE_RISING" SIGIS="INTERRUPT" SIGNAME="buzzer_per_0_my_timer_irq">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_intc_0" PORT="Intr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" IS_INSTANTIATED="TRUE" MHS_INDEX="3" MPD_INDEX="21" NAME="o_strobe" SIGNAME="buzzer_per_0_o_strobe">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External Ports" PORT="buzzer_per_0_o_strobe_pin"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" IS_INSTANTIATED="TRUE" MHS_INDEX="4" MPD_INDEX="22" NAME="o_clk" SIGNAME="buzzer_per_0_o_clk">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External Ports" PORT="buzzer_per_0_o_clk_pin"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" IS_INSTANTIATED="TRUE" MHS_INDEX="5" MPD_INDEX="23" NAME="o_data" SIGNAME="buzzer_per_0_o_data">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External Ports" PORT="buzzer_per_0_o_data_pin"/>
           </CONNECTIONS>
         </PORT>
         <PORT BUS="S_AXI" DEF_SIGNAME="axi4lite_0_M_ARESETN" DIR="I" MPD_INDEX="1" NAME="S_AXI_ARESETN" SIGIS="RST" SIGNAME="axi4lite_0_M_ARESETN">

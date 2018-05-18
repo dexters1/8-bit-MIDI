@@ -1,0 +1,206 @@
+Release 14.6 - xst P.68d (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.08 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.08 secs
+ 
+--> Reading design: buzzer_per.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "buzzer_per.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "buzzer_per"
+Output Format                      : NGC
+Target Device                      : xc6slx45-2-fgg676
+
+---- Source Options
+Top Module Name                    : buzzer_per
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Parsing VHDL file "C:/Xilinx/14.6/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/proc_common_pkg.vhd" into library proc_common_v3_00_a
+Parsing package <proc_common_pkg>.
+Parsing package body <proc_common_pkg>.
+Parsing VHDL file "C:/Xilinx/14.6/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/family_support.vhd" into library proc_common_v3_00_a
+Parsing package <family_support>.
+Parsing package body <family_support>.
+Parsing VHDL file "C:/Xilinx/14.6/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/pselect_f.vhd" into library proc_common_v3_00_a
+Parsing entity <pselect_f>.
+Parsing architecture <imp> of entity <pselect_f>.
+Parsing VHDL file "C:/Xilinx/14.6/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/ipif_pkg.vhd" into library proc_common_v3_00_a
+Parsing package <ipif_pkg>.
+Parsing package body <ipif_pkg>.
+Parsing VHDL file "C:/Xilinx/14.6/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/counter_f.vhd" into library proc_common_v3_00_a
+Parsing entity <counter_f>.
+Parsing architecture <imp> of entity <counter_f>.
+Parsing VHDL file "C:/Xilinx/14.6/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_lite_ipif_v1_01_a/hdl/vhdl/address_decoder.vhd" into library axi_lite_ipif_v1_01_a
+Parsing entity <address_decoder>.
+Parsing architecture <IMP> of entity <address_decoder>.
+Parsing VHDL file "D:\RA60-2015\8-bit-MIDI\project\pcores\buzzer_per_v1_00_b\hdl\vhdl\baljezgarija.vhd" into library work
+Parsing entity <baljezgarija>.
+Parsing architecture <Behavioral> of entity <baljezgarija>.
+Parsing VHDL file "D:\RA60-2015\8-bit-MIDI\project\pcores\buzzer_per_v1_00_b\devl\projnav\DAC_8_bit.vhd" into library work
+Parsing entity <DAC_8_bit>.
+Parsing architecture <Behavioral> of entity <dac_8_bit>.
+Parsing VHDL file "C:/Xilinx/14.6/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_lite_ipif_v1_01_a/hdl/vhdl/slave_attachment.vhd" into library axi_lite_ipif_v1_01_a
+Parsing entity <slave_attachment>.
+Parsing architecture <imp> of entity <slave_attachment>.
+Parsing VHDL file "D:\RA60-2015\8-bit-MIDI\project\pcores\buzzer_per_v1_00_b\hdl\vhdl\user_logic.vhd" into library buzzer_per_v1_00_b
+Parsing entity <user_logic>.
+Parsing architecture <IMP> of entity <user_logic>.
+Parsing VHDL file "C:/Xilinx/14.6/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_lite_ipif_v1_01_a/hdl/vhdl/axi_lite_ipif.vhd" into library axi_lite_ipif_v1_01_a
+Parsing entity <axi_lite_ipif>.
+Parsing architecture <imp> of entity <axi_lite_ipif>.
+Parsing VHDL file "D:\RA60-2015\8-bit-MIDI\project\pcores\buzzer_per_v1_00_b\hdl\vhdl\buzzer_per.vhd" into library buzzer_per_v1_00_b
+Parsing entity <buzzer_per>.
+Parsing architecture <IMP> of entity <buzzer_per>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating entity <buzzer_per> (architecture <IMP>) with generics from library <buzzer_per_v1_00_b>.
+
+Elaborating entity <axi_lite_ipif> (architecture <imp>) with generics from library <axi_lite_ipif_v1_01_a>.
+
+Elaborating entity <slave_attachment> (architecture <imp>) with generics from library <axi_lite_ipif_v1_01_a>.
+
+Elaborating entity <address_decoder> (architecture <IMP>) with generics from library <axi_lite_ipif_v1_01_a>.
+
+Elaborating entity <pselect_f> (architecture <imp>) with generics from library <proc_common_v3_00_a>.
+
+Elaborating entity <pselect_f> (architecture <imp>) with generics from library <proc_common_v3_00_a>.
+
+Elaborating entity <pselect_f> (architecture <imp>) with generics from library <proc_common_v3_00_a>.
+
+Elaborating entity <pselect_f> (architecture <imp>) with generics from library <proc_common_v3_00_a>.
+
+Elaborating entity <pselect_f> (architecture <imp>) with generics from library <proc_common_v3_00_a>.
+
+Elaborating entity <pselect_f> (architecture <imp>) with generics from library <proc_common_v3_00_a>.
+
+Elaborating entity <pselect_f> (architecture <imp>) with generics from library <proc_common_v3_00_a>.
+
+Elaborating entity <pselect_f> (architecture <imp>) with generics from library <proc_common_v3_00_a>.
+INFO:HDLCompiler:679 - "C:/Xilinx/14.6/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_lite_ipif_v1_01_a/hdl/vhdl/slave_attachment.vhd" Line 417. Case statement is complete. others clause is never selected
+
+Elaborating entity <user_logic> (architecture <IMP>) with generics from library <buzzer_per_v1_00_b>.
+
+Elaborating entity <baljezgarija> (architecture <Behavioral>) from library <work>.
+WARNING:HDLCompiler:92 - "D:\RA60-2015\8-bit-MIDI\project\pcores\buzzer_per_v1_00_b\hdl\vhdl\baljezgarija.vhd" Line 79: i_bus2ip_rst should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "D:\RA60-2015\8-bit-MIDI\project\pcores\buzzer_per_v1_00_b\hdl\vhdl\baljezgarija.vhd" Line 111: output_value should be on the sensitivity list of the process
+
+Elaborating entity <DAC_8_bit> (architecture <Behavioral>) from library <work>.
+WARNING:HDLCompiler:92 - "D:\RA60-2015\8-bit-MIDI\project\pcores\buzzer_per_v1_00_b\devl\projnav\DAC_8_bit.vhd" Line 64: in_rst should be on the sensitivity list of the process
+WARNING:HDLCompiler:1127 - "D:\RA60-2015\8-bit-MIDI\project\pcores\buzzer_per_v1_00_b\devl\projnav\DAC_8_bit.vhd" Line 62: Assignment to s_strobe ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:\RA60-2015\8-bit-MIDI\project\pcores\buzzer_per_v1_00_b\devl\projnav\DAC_8_bit.vhd" Line 106: Assignment to s_strobe ignored, since the identifier is never used
+ERROR:HDLCompiler:1401 - "D:\RA60-2015\8-bit-MIDI\project\pcores\buzzer_per_v1_00_b\devl\projnav\DAC_8_bit.vhd" Line 62: Signal current_s[4] in unit DAC_8_bit is connected to following multiple drivers:
+Driver 0: output signal current_s[4] of instance Latch (current_s[4]).
+Driver 1: output signal current_s[4] of instance Latch (_i000033).
+Driver 0: output signal current_s[3] of instance Latch (current_s[3]).
+Driver 1: output signal current_s[3] of instance Latch (_i000036).
+Driver 0: output signal current_s[2] of instance Latch (current_s[2]).
+Driver 1: output signal current_s[2] of instance Latch (_i000039).
+Driver 0: output signal current_s[1] of instance Latch (current_s[1]).
+Driver 1: output signal current_s[1] of instance Latch (_i000042).
+Driver 0: output signal current_s[0] of instance Latch (current_s[0]).
+Driver 1: output signal current_s[0] of instance Latch (_i000045).
+ERROR:HDLCompiler:1401 - "D:\RA60-2015\8-bit-MIDI\project\pcores\buzzer_per_v1_00_b\devl\projnav\DAC_8_bit.vhd" Line 106: Signal s_flag in unit DAC_8_bit is connected to following multiple drivers:
+Driver 0: output signal s_flag of instance Flip-Flop (_i000030).
+Driver 1: output signal s_flag of instance Latch (s_flag).
+Netlist user_logic(8,32)(IMP) remains a blackbox, due to errors in its contents
+--> 
+
+Total memory usage is 216728 kilobytes
+
+Number of errors   :    2 (   0 filtered)
+Number of warnings :    5 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

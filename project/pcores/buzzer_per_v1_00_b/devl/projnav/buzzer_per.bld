@@ -1,0 +1,43 @@
+Release 14.6 ngdbuild P.68d (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+Command Line: C:\Xilinx\14.6\ISE_DS\ISE\bin\nt64\unwrapped\ngdbuild.exe
+-intstyle ise -dd _ngo -nt timestamp -i -p xc6slx45-fgg676-2 buzzer_per.ngc
+buzzer_per.ngd
+
+Reading NGO file
+"D:/RA60-2015/8-bit-MIDI/project/pcores/buzzer_per_v1_00_b/devl/projnav/buzzer_p
+er.ngc" ...
+Gathering constraint information from source properties...
+Done.
+
+Resolving constraint associations...
+Checking Constraint Associations...
+Done...
+
+Checking expanded design ...
+ERROR:NgdBuild:604 - logical block 'USER_LOGIC_I/DAC_8_bit_0' with type
+   'DAC_8_bit' could not be resolved. A pin name misspelling can cause this, a
+   missing edif or ngc file, case mismatch between the block name and the edif
+   or ngc file name, or the misspelling of a type name. Symbol 'DAC_8_bit' is
+   not supported in target 'spartan6'.
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+NGDBUILD Design Results Summary:
+  Number of errors:     1
+  Number of warnings:   0
+
+Total memory usage is 165372 kilobytes
+
+Total REAL time to NGDBUILD completion:  2 sec
+Total CPU time to NGDBUILD completion:   2 sec
+
+One or more errors were found during NGDBUILD.  No NGD file will be written.
+
+Writing NGDBUILD log file "buzzer_per.bld"...

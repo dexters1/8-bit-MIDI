@@ -1,0 +1,8 @@
+xst -intstyle ise -ifn "D:/RA60-2015/8-bit-MIDI/project/pcores/buzzer_per_v1_00_b/devl/projnav/buzzer_per.xst" -ofn "D:/RA60-2015/8-bit-MIDI/project/pcores/buzzer_per_v1_00_b/devl/projnav/buzzer_per.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx45-fgg676-2 buzzer_per.ngc buzzer_per.ngd  
+xst -intstyle ise -ifn "D:/RA60-2015/8-bit-MIDI/project/pcores/buzzer_per_v1_00_b/devl/projnav/buzzer_per.xst" -ofn "D:/RA60-2015/8-bit-MIDI/project/pcores/buzzer_per_v1_00_b/devl/projnav/buzzer_per.syr" 
+xst -intstyle ise -ifn "D:/RA60-2015/8-bit-MIDI/project/pcores/buzzer_per_v1_00_b/devl/projnav/buzzer_per.xst" -ofn "D:/RA60-2015/8-bit-MIDI/project/pcores/buzzer_per_v1_00_b/devl/projnav/buzzer_per.syr" 
+xst -intstyle ise -ifn "D:/RA60-2015/8-bit-MIDI/project/pcores/buzzer_per_v1_00_b/devl/projnav/buzzer_per.xst" -ofn "D:/RA60-2015/8-bit-MIDI/project/pcores/buzzer_per_v1_00_b/devl/projnav/buzzer_per.syr" 
+xst -intstyle ise -ifn "D:/RA60-2015/8-bit-MIDI/project/pcores/buzzer_per_v1_00_b/devl/projnav/buzzer_per.xst" -ofn "D:/RA60-2015/8-bit-MIDI/project/pcores/buzzer_per_v1_00_b/devl/projnav/buzzer_per.syr" 
+xst -intstyle ise -ifn "D:/RA60-2015/8-bit-MIDI/project/pcores/buzzer_per_v1_00_b/devl/projnav/buzzer_per.xst" -ofn "D:/RA60-2015/8-bit-MIDI/project/pcores/buzzer_per_v1_00_b/devl/projnav/buzzer_per.syr" 
+xst -intstyle ise -ifn "D:/RA60-2015/8-bit-MIDI/project/pcores/buzzer_per_v1_00_b/devl/projnav/buzzer_per.xst" -ofn "D:/RA60-2015/8-bit-MIDI/project/pcores/buzzer_per_v1_00_b/devl/projnav/buzzer_per.syr" 

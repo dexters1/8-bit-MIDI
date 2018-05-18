@@ -122,4 +122,5 @@ vhdl axi_lite_ipif_v1_01_a C:\Xilinx\14.6\ISE_DS\EDK\hw\XilinxProcessorIPLib\pco
 vhdl buzzer_per_v1_00_b D:\RA60-2015\8-bit-MIDI\project\pcores\buzzer_per_v1_00_b/hdl/vhdl/user_logic.vhd
 vhdl buzzer_per_v1_00_b D:\RA60-2015\8-bit-MIDI\project\pcores\buzzer_per_v1_00_b/hdl/vhdl/buzzer_per.vhd
 vhdl buzzer_per_v1_00_b D:\RA60-2015\8-bit-MIDI\project\pcores\buzzer_per_v1_00_b/hdl/vhdl/baljezgarija.vhd
+vhdl buzzer_per_v1_00_b D:\RA60-2015\8-bit-MIDI\project\pcores\buzzer_per_v1_00_b/hdl/vhdl/DAC_8_bit.vhd
 vhdl work ../hdl/system_buzzer_per_0_wrapper.vhd

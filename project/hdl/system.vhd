@@ -12,7 +12,10 @@ entity system is
     RESET : in std_logic;
     CLK_P : in std_logic;
     CLK_N : in std_logic;
-    buzzer_per_0_out_pwm_pin : out std_logic
+    buzzer_per_0_out_pwm_pin : out std_logic;
+    buzzer_per_0_o_strobe_pin : out std_logic;
+    buzzer_per_0_o_clk_pin : out std_logic;
+    buzzer_per_0_o_data_pin : out std_logic
   );
 end system;
 
@@ -1620,7 +1623,10 @@ architecture STRUCTURE of system is
       S_AXI_BVALID : out std_logic;
       S_AXI_AWREADY : out std_logic;
       out_pwm : out std_logic;
-      my_timer_irq : out std_logic
+      my_timer_irq : out std_logic;
+      o_strobe : out std_logic;
+      o_clk : out std_logic;
+      o_data : out std_logic
     );
   end component;
 
@@ -1754,6 +1760,9 @@ architecture STRUCTURE of system is
   signal axi_intc_0_INTERRUPT_Interrupt_Ack : std_logic_vector(1 downto 0);
   signal axi_intc_0_INTERRUPT_Interrupt_Address : std_logic_vector(0 to 31);
   signal buzzer_per_0_my_timer_irq : std_logic_vector(0 downto 0);
+  signal buzzer_per_0_o_clk : std_logic;
+  signal buzzer_per_0_o_data : std_logic;
+  signal buzzer_per_0_o_strobe : std_logic;
   signal buzzer_per_0_out_pwm : std_logic;
   signal clk_100_0000MHz : std_logic_vector(0 to 0);
   signal microblaze_0_d_bram_ctrl_2_microblaze_0_bram_block_BRAM_Addr : std_logic_vector(0 to 31);
@@ -1858,6 +1867,9 @@ begin
   -- Internal assignments
 
   buzzer_per_0_out_pwm_pin <= buzzer_per_0_out_pwm;
+  buzzer_per_0_o_strobe_pin <= buzzer_per_0_o_strobe;
+  buzzer_per_0_o_clk_pin <= buzzer_per_0_o_clk;
+  buzzer_per_0_o_data_pin <= buzzer_per_0_o_data;
   pgassign1(3 downto 3) <= clk_100_0000MHz(0 to 0);
   pgassign1(2 downto 2) <= clk_100_0000MHz(0 to 0);
   pgassign1(1 downto 1) <= clk_100_0000MHz(0 to 0);
@@ -3465,7 +3477,10 @@ begin
       S_AXI_BVALID => axi4lite_0_M_BVALID(1),
       S_AXI_AWREADY => axi4lite_0_M_AWREADY(1),
       out_pwm => buzzer_per_0_out_pwm,
-      my_timer_irq => buzzer_per_0_my_timer_irq(0)
+      my_timer_irq => buzzer_per_0_my_timer_irq(0),
+      o_strobe => buzzer_per_0_o_strobe,
+      o_clk => buzzer_per_0_o_clk,
+      o_data => buzzer_per_0_o_data
     );
 
   axi_intc_0 : system_axi_intc_0_wrapper

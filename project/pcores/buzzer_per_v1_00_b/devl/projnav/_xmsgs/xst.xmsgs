@@ -5,5 +5,26 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
+<msg type="warning" file="HDLCompiler" num="92" delta="old" >"D:\RA60-2015\8-bit-MIDI\project\pcores\buzzer_per_v1_00_b\hdl\vhdl\baljezgarija.vhd" Line 79: <arg fmt="%s" index="1">i_bus2ip_rst</arg> should be on the sensitivity list of the process
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="92" delta="old" >"D:\RA60-2015\8-bit-MIDI\project\pcores\buzzer_per_v1_00_b\hdl\vhdl\baljezgarija.vhd" Line 111: <arg fmt="%s" index="1">output_value</arg> should be on the sensitivity list of the process
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="92" delta="old" >"D:\RA60-2015\8-bit-MIDI\project\pcores\buzzer_per_v1_00_b\devl\projnav\DAC_8_bit.vhd" Line 64: <arg fmt="%s" index="1">in_rst</arg> should be on the sensitivity list of the process
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"D:\RA60-2015\8-bit-MIDI\project\pcores\buzzer_per_v1_00_b\devl\projnav\DAC_8_bit.vhd" Line 62: Assignment to <arg fmt="%s" index="1">s_strobe</arg> ignored, since the identifier is never used
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"D:\RA60-2015\8-bit-MIDI\project\pcores\buzzer_per_v1_00_b\devl\projnav\DAC_8_bit.vhd" Line 106: Assignment to <arg fmt="%s" index="1">s_strobe</arg> ignored, since the identifier is never used
+</msg>
+
+<msg type="error" file="HDLCompiler" num="1401" delta="old" >"D:\RA60-2015\8-bit-MIDI\project\pcores\buzzer_per_v1_00_b\devl\projnav\DAC_8_bit.vhd" Line 62: Signal <arg fmt="%s" index="1">current_s[4]</arg> in unit <arg fmt="%s" index="2">DAC_8_bit</arg> is connected to following multiple drivers:
+</msg>
+
+<msg type="error" file="HDLCompiler" num="1401" delta="new" >"D:\RA60-2015\8-bit-MIDI\project\pcores\buzzer_per_v1_00_b\devl\projnav\DAC_8_bit.vhd" Line 106: Signal <arg fmt="%s" index="1">s_flag</arg> in unit <arg fmt="%s" index="2">DAC_8_bit</arg> is connected to following multiple drivers:
+</msg>
+
 </messages>
 
