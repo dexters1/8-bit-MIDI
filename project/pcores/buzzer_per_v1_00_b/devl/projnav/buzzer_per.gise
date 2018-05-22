@@ -174,8 +174,8 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1526638368" xil_pn:in_ck="-1475469362580561755" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="-1433470752994129668" xil_pn:start_ts="1526638363">
-      <status xil_pn:value="FailedRun"/>
+    <transform xil_pn:end_ts="1526983901" xil_pn:in_ck="-1475469362580561755" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="-1433470752994129668" xil_pn:start_ts="1526983892">
+      <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
@@ -185,6 +185,7 @@
       <outfile xil_pn:name="buzzer_per.ngc"/>
       <outfile xil_pn:name="buzzer_per.ngr"/>
       <outfile xil_pn:name="buzzer_per.prj"/>
+      <outfile xil_pn:name="buzzer_per.stx"/>
       <outfile xil_pn:name="buzzer_per.syr"/>
       <outfile xil_pn:name="buzzer_per.xst"/>
       <outfile xil_pn:name="buzzer_per_xst.xrpt"/>

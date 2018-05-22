@@ -148,15 +148,17 @@ architecture IMP of user_logic is
            o_irq : out  STD_LOGIC);
  end component;
 
-
 component DAC_8_bit is
-    Port ( i_clk : in  STD_LOGIC;
-           in_rst : in  STD_LOGIC;
-			  i_reg : in std_logic_vector(31 downto 0);
-           o_strobe : out  STD_LOGIC;
-           o_clk : out  STD_LOGIC;
-           o_data : out  STD_LOGIC);
+	port(
+		i_clk    : in  std_logic;
+		in_rst   : in  std_logic;
+		i_sample : in  std_logic_vector(31 downto 0);
+		o_clk    : out std_logic;
+		o_data   : out std_logic;
+		o_strobe : out std_logic
+	);
 end component DAC_8_bit;
+
   ------------------------------------------
   -- Signals for user logic slave model s/w accessible register example
   ------------------------------------------
@@ -180,7 +182,6 @@ begin
   --USER logic implementation added here
   
   buzz_0: baljezgarija
-  
 	port map (
 		i_slv_0=>slv_reg0,
         i_slv_1=>slv_reg1,
@@ -193,11 +194,10 @@ begin
 	);
 	
 	DAC_8_bit_0: DAC_8_bit
-	
 	port map (
 		i_clk => Bus2IP_Clk,
 		in_rst => Bus2IP_Resetn,
-		i_reg => slv_reg4,
+		i_sample => x"0000005e",--slv_reg4,
 		o_strobe => o_strobe,
 		o_clk => o_clk,
 		o_data => o_data

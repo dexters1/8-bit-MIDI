@@ -31,149 +31,210 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 --use UNISIM.VComponents.all;
 
 entity DAC_8_bit is
-    Port ( i_clk : in  STD_LOGIC;
-           in_rst : in  STD_LOGIC;
-			  i_reg : in std_logic_vector(31 downto 0);
-           o_strobe : out  STD_LOGIC;
-           o_clk : out  STD_LOGIC;
-           o_data : out  STD_LOGIC);
+	port(
+		i_clk    : in  std_logic;
+		in_rst   : in  std_logic;
+		i_sample : in  std_logic_vector(31 downto 0);
+		o_clk    : out std_logic;
+		o_data   : out std_logic;
+		o_strobe : out std_logic
+	);
 end entity DAC_8_bit;
 
 architecture Behavioral of DAC_8_bit is
 
 type state_type is ( IDLE, B7, CLK7, B6, CLK6, B5, CLK5, B4, CLK4, B3, CLK3, B2, CLK2, B1, CLK1, B0, CLK0, STROBE );
 
-signal current_s: state_type;
-
---signal timer_value: std_logic_vector(31 downto 0) := (others => '0');
---signal b2ip=_value: std_logic_vector(7 downto 0):= (others => '0');
-
+signal current_s, next_s: state_type;
 signal timer_value: std_logic_vector(7 downto 0) := (others => '0');
-signal s_flag: std_logic;
+signal s_flag: std_logic := '0';
+signal s_data: std_logic := '0';
+signal s_strobe: std_logic := '0';
+signal s_clk: std_logic := '0';
 
---signal next_timer_value: std_logic_vector(31 downto 0);
---signal next_b2ip_value: std_logic_vector(7 downto 0);
-
---signal s_data: std_logic;
---signal s_strobe: std_logic;
+signal tc : std_logic;
 
 begin
 
-process (i_clk) -- Razdvojimo procese za reset, state i clock 
+-- proces za FSM
+process (i_clk) 
 	begin
 		if (in_rst='0') then
 			current_s <= IDLE;
-			timer_value<=(others => '0');
-			
-			s_strobe <= '0';
-			o_data<='0';
-			s_flag <= '0';
-			
-			
 		elsif (rising_edge(i_clk)) then 
 			current_s <= next_s; --Menjamo next_s u case-ovima
-		
-			if ( timer_value = 99 ) then -- timer_value sam sebe sredjuje, ne treba nam s_flag
-			
-				timer_value <= (others => '0');
-				
-			else
-			
-				timer_value<= timer_value + 1;
-				
-			end if;
-		
-			
 	 end if;
 end process;
 
-
-
-
-s_flag <= '1' when timer_value = 99 else '0';
-
-
-
-process(current_s, i_reg, timer_value)
-
+-- proces za time_value
+process (i_clk)
 	begin
-	
-		
+		if (in_rst = '0') then
+			timer_value <= (others => '0');
+		elsif (rising_edge(i_clk)) then
+			if tc = '1' then -- timer_value sam sebe sredjuje
+				timer_value <= (others => '0');
+			else
+				timer_value<= timer_value + 1;
+			end if;
+		end if;
+end process;
+tc <= '1' when timer_value = 99 else '0';
+
+-- proces za o_strobe
+process (i_clk)
+	begin
+		if (in_rst = '0') then
+			o_strobe <= '0';
+		elsif (rising_edge(i_clk)) then
+			o_strobe <= s_strobe;
+		end if;
+end process;
+
+-- proces za o_data
+process (i_clk)
+	begin
+		if (in_rst = '0') then
+			o_data <= '0';
+		elsif (rising_edge(i_clk)) then
+			o_data <= s_data;
+		end if;
+end process;
+
+-- proces za o_clk
+process (i_clk)
+	begin
+		if (in_rst = '0') then
+			o_clk <= '0';
+		elsif (rising_edge(i_clk)) then
+			o_clk <= s_clk;
+		end if;
+end process;
+
+
+process(current_s, tc)
+begin
+	if tc = '1' then
 		case current_s is
+			when IDLE =>
+				next_s <= B7;
+			when B7 =>
+				next_s <= CLK7;
+			when CLK7 =>
+				next_s <= B6;
+			when B6 =>
+				next_s <= CLK6;
+			when CLK6 =>
+				next_s <= B5;
+			when B5 =>
+				next_s <= CLK5;
+			when CLK5 =>
+				next_s <= B4;
+			when B4 =>
+				next_s <= CLK4;
+			when CLK4 =>
+				next_s <= B3;
+			when B3 =>
+				next_s <= CLK3;
+			when CLK3 =>
+				next_s <= B2;
+			when B2 =>
+				next_s <= CLK2;
+			when CLK2 =>
+				next_s <= B1;
+			when B1 =>
+				next_s <= CLK1;
+			when CLK1 =>
+				next_s <= B0;
+			when B0 =>
+				next_s <= CLK0;
+			when CLK0 =>
+				next_s <= STROBE;
+			when STROBE =>
+				next_s <= IDLE;
+		end case;
+	else
+		next_s <= current_s;
+	end if;
+end process;
 
+
+process(current_s, i_sample)
+begin
+	case current_s is
 		when IDLE =>
-			next_s <= B7;
-		
-			
+			s_clk <= '0';
+			s_strobe <= '0';
+			s_data <= '0';
 		when B7 =>
-		if (timer_value=99) then
-			s_data <= i_reg(7);
-			current_s <= CLK7;
-		else
-			current_s <= B7;
-			s_flag <= '0';
-		end if;
-		
-		when CLK7 => -- OVDE DIZEMO O_CLK na '1' da bi DAC znao sta se desava
-			s_flag <= '0';
-			current_s <= B6;
-		
-		
-		when B6 => -- OVDE SPUSTAMO O_CLK na '0' da bi DAC znao sta se desava
-		if (timer_value=99) then
-			s_flag <= '1';
-			current_s <= B5;
-		end if;
-			
+			s_clk <= '0';
+			s_strobe <= '0';
+			s_data <= i_sample(7);
+		when CLK7 =>
+			s_clk <= '1';
+			s_strobe <= '0';
+			s_data <= i_sample(7);
+		when B6 =>
+			s_clk <= '0';
+			s_strobe <= '0';
+			s_data <= i_sample(6);
+		when CLK6 =>
+			s_clk <= '1';
+			s_strobe <= '0';
+			s_data <= i_sample(6);
 		when B5 =>
-		if (timer_value=99) then
-			s_flag <= '1';
-			current_s <= B4;
-		end if;
-			
+			s_clk <= '0';
+			s_strobe <= '0';
+			s_data <= i_sample(5);
+		when CLK5 =>
+			s_clk <= '1';
+			s_strobe <= '0';
+			s_data <= i_sample(5);		
 		when B4 =>
-		if (timer_value=99) then
-			s_flag <= '1';
-			current_s <= B3;
-		end if;
-			
+			s_clk <= '0';
+			s_strobe <= '0';
+			s_data <= i_sample(4);
+		when CLK4 =>
+			s_clk <= '1';
+			s_strobe <= '0';
+			s_data <= i_sample(4);
 		when B3 =>
-		if (timer_value=99) then
-			s_flag <= '1';
-			current_s <= B2;
-		end if;
-			
+			s_clk <= '0';
+			s_strobe <= '0';
+			s_data <= i_sample(3);
+		when CLK3 =>
+			s_clk <= '1';
+			s_strobe <= '0';
+			s_data <= i_sample(3);
 		when B2 =>
-		if (timer_value=99) then
-			s_flag <= '1';
-			current_s <= B1;
-		end if;
-			
+			s_clk <= '0';
+			s_strobe <= '0';
+			s_data <= i_sample(2);
+		when CLK2 =>
+			s_clk <= '1';
+			s_strobe <= '0';
+			s_data <= i_sample(2);
 		when B1 =>
-		if (timer_value=99) then
-			s_flag <= '1';
-			current_s <= B0;
-		end if;
-			
+			s_clk <= '0';
+			s_strobe <= '0';
+			s_data <= i_sample(1);
+		when CLK1 =>
+			s_clk <= '1';
+			s_strobe <= '0';
+			s_data <= i_sample(1);
 		when B0 =>
-		if (timer_value=99) then
-			s_flag <= '1';
-			current_s <= STROBE;
-		end if;
-		
+			s_clk <= '0';
+			s_strobe <= '0';
+			s_data <= i_sample(0);
+		when CLK0 =>
+			s_clk <= '1';
+			s_strobe <= '0';
+			s_data <= i_sample(0);
 		when STROBE =>
-		if (timer_value=99) then
-			s_flag <= '1';
+			s_clk <= '0';
 			s_strobe <= '1';
-			current_s <= IDLE;
-		end if;
-		
-		when others =>
-			current_s <= IDLE;
-
-			
+			s_data <= '0';
 	end case;
-		
 end process;
 
 

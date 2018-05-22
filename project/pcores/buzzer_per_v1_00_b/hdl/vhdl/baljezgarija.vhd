@@ -41,7 +41,7 @@ entity baljezgarija is
 			  --
            o_pwm : out  STD_LOGIC;
            o_irq : out  STD_LOGIC);
-end baljezgarija;
+end entity baljezgarija;
 
 architecture Behavioral of baljezgarija is
 

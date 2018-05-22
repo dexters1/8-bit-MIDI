@@ -479,9 +479,9 @@ Elaborating entity <user_logic> (architecture <IMP>) with generics from library 
 Elaborating entity <baljezgarija> (architecture <Behavioral>) from library <buzzer_per_v1_00_b>.
 WARNING:HDLCompiler:92 - "D:/RA60-2015/8-bit-MIDI/project/pcores/buzzer_per_v1_00_b/hdl/vhdl/baljezgarija.vhd" Line 79: i_bus2ip_rst should be on the sensitivity list of the process
 WARNING:HDLCompiler:92 - "D:/RA60-2015/8-bit-MIDI/project/pcores/buzzer_per_v1_00_b/hdl/vhdl/baljezgarija.vhd" Line 111: output_value should be on the sensitivity list of the process
-ERROR:HDLCompiler:1156 - "D:/RA60-2015/8-bit-MIDI/project/pcores/buzzer_per_v1_00_b/hdl/vhdl/user_logic.vhd" Line 155: Formal port <i_reg> does not exist in entity <DAC_8_bit>.  Please compare the definition of block <DAC_8_bit> to its component declaration and its instantion to detect the mismatch.
+ERROR:HDLCompiler:1156 - "D:/RA60-2015/8-bit-MIDI/project/pcores/buzzer_per_v1_00_b/hdl/vhdl/user_logic.vhd" Line 155: Formal port <i_sample> does not exist in entity <DAC_8_bit>.  Please compare the definition of block <DAC_8_bit> to its component declaration and its instantion to detect the mismatch.
 INFO:HDLCompiler:1408 - "D:/RA60-2015/8-bit-MIDI/project/pcores/buzzer_per_v1_00_b/hdl/vhdl/DAC_8_bit.vhd" Line 32. dac_8_bit is declared here
-ERROR:HDLCompiler:377 - "D:/RA60-2015/8-bit-MIDI/project/pcores/buzzer_per_v1_00_b/hdl/vhdl/user_logic.vhd" Line 158: Entity port o_data does not match with type std_logic of component port
+ERROR:HDLCompiler:377 - "D:/RA60-2015/8-bit-MIDI/project/pcores/buzzer_per_v1_00_b/hdl/vhdl/user_logic.vhd" Line 157: Entity port o_data does not match with type std_logic of component port
 INFO:HDLCompiler:1408 - "D:/RA60-2015/8-bit-MIDI/project/pcores/buzzer_per_v1_00_b/hdl/vhdl/DAC_8_bit.vhd" Line 38. o_data is declared here
 
 Elaborating entity <DAC_8_bit> (architecture <Behavioral>) from library <buzzer_per_v1_00_b>.
@@ -489,7 +489,7 @@ Execution of entity dac_8_bit failed
 Netlist user_logic(8,32)(IMP) remains a blackbox, due to errors in its contents
 --> 
 
-Total memory usage is 233240 kilobytes
+Total memory usage is 233880 kilobytes
 
 Number of errors   :    2 (   0 filtered)
 Number of warnings :    2 (   0 filtered)
