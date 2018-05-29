@@ -1,4 +1,0 @@
-vhdl work "../../hdl/vhdl/baljezgarija.vhd"
-vhdl work "DAC_8_bit.vhd"
-vhdl proc_common_v3_00_a "C:/Xilinx/14.6/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/proc_common_pkg.vhd"
-vhdl buzzer_per_v1_00_b "../../hdl/vhdl/user_logic.vhd"
