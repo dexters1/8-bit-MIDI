@@ -110,6 +110,11 @@ int main()
 	 Tone=1;
 	 Tempo = *(pSong + 0);
 
+
+	 // Test.
+	 XIo_Out32(XPAR_BUZZER_PER_0_BASEADDR + 4*4, 0x02);
+
+
 	 //set regs for tc for interrupt(note duration)
 	 XIo_Out32(XPAR_BUZZER_PER_0_BASEADDR + 4*3, ONE);
 

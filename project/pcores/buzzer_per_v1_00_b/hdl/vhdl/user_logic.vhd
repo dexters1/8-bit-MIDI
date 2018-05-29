@@ -197,7 +197,7 @@ begin
 	port map (
 		i_clk => Bus2IP_Clk,
 		in_rst => Bus2IP_Resetn,
-		i_sample => x"0000005e",--slv_reg4,
+		i_sample => slv_reg4,
 		o_strobe => o_strobe,
 		o_clk => o_clk,
 		o_data => o_data
