@@ -4,6 +4,7 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
+../src/dds.c \
 ../src/helloworld.c \
 ../src/platform.c 
 
@@ -11,10 +12,12 @@ LD_SRCS += \
 ../src/lscript.ld 
 
 OBJS += \
+./src/dds.o \
 ./src/helloworld.o \
 ./src/platform.o 
 
 C_DEPS += \
+./src/dds.d \
 ./src/helloworld.d \
 ./src/platform.d 
 

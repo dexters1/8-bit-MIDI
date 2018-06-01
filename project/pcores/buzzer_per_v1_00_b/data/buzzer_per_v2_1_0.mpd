@@ -63,5 +63,4 @@ PORT my_timer_irq			= "", DIR = O, SIGIS = INTERRUPT, SENSITIVITY = EDGE_RISING
 PORT o_strobe = "", DIR = O
 PORT o_clk = "", DIR = O
 PORT o_data = "", DIR = O
-
 END
