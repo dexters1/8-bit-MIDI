@@ -143,6 +143,7 @@ entity buzzer_per is
 	o_strobe : out  STD_LOGIC;
 	o_clk : out  STD_LOGIC;
 	o_data : out  STD_LOGIC;
+	o_interrupt48khz: out std_logic;
     -- ADD USER PORTS ABOVE THIS LINE ------------------
 
     -- DO NOT EDIT BELOW THIS LINE ---------------------
@@ -313,6 +314,7 @@ begin
 	  o_strobe => o_strobe,
 	  o_clk => o_clk,
 	  o_data => o_data,
+	  o_interrupt48khz => o_interrupt48khz,
 	  
       -- MAP USER PORTS ABOVE THIS LINE ------------------
 

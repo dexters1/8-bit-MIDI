@@ -31,6 +31,7 @@
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_STX" xil_pn:name="buzzer_per.stx"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_REPORT" xil_pn:name="buzzer_per.syr"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="buzzer_per.xst"/>
+    <file xil_pn:fileType="FILE_HTML" xil_pn:name="buzzer_per_envsettings.html"/>
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="buzzer_per_summary.html"/>
     <file xil_pn:fileType="FILE_XRPT" xil_pn:name="buzzer_per_xst.xrpt"/>
     <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="webtalk_pn.xml"/>
@@ -62,7 +63,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1527588095" xil_pn:in_ck="-9110335548059797537" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="-1433470752994129668" xil_pn:start_ts="1527588082">
+    <transform xil_pn:end_ts="1528190784" xil_pn:in_ck="-9110335548059797537" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="-1433470752994129668" xil_pn:start_ts="1528190776">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>

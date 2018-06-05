@@ -143,6 +143,7 @@ BEGIN buzzer_per
  PORT o_strobe = buzzer_per_0_o_strobe
  PORT o_clk = buzzer_per_0_o_clk
  PORT o_data = buzzer_per_0_o_data
+ PORT o_interrupt48khz = buzzer_per_0_o_interrupt48khz
 END
 
 BEGIN axi_intc
@@ -154,7 +155,7 @@ BEGIN axi_intc
  BUS_INTERFACE S_AXI = axi4lite_0
  BUS_INTERFACE INTERRUPT = axi_intc_0_INTERRUPT
  PORT S_AXI_ACLK = clk_100_0000MHz
- PORT Intr = buzzer_per_0_my_timer_irq
+ PORT Intr = buzzer_per_0_my_timer_irq & buzzer_per_0_o_interrupt48khz
 END
 
 BEGIN my_peripheral

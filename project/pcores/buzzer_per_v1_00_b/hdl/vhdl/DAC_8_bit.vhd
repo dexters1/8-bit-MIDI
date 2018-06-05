@@ -37,7 +37,8 @@ entity DAC_8_bit is
 		i_sample : in  std_logic_vector(31 downto 0);
 		o_clk    : out std_logic;
 		o_data   : out std_logic;
-		o_strobe : out std_logic
+		o_strobe : out std_logic;
+		o_interrupt48khz: out std_logic
 	);
 end entity DAC_8_bit;
 
@@ -47,12 +48,14 @@ type state_type is ( IDLE, B7, CLK7, B6, CLK6, B5, CLK5, B4, CLK4, B3, CLK3, B2,
 
 signal current_s, next_s: state_type;
 signal timer_value: std_logic_vector(7 downto 0) := (others => '0');
+signal timer_value_interrupt: std_logic_vector(7 downto 0) := (others => '0');
 signal s_flag: std_logic := '0';
 signal s_data: std_logic := '0';
 signal s_strobe: std_logic := '0';
 signal s_clk: std_logic := '0';
 
 signal tc : std_logic;
+signal s_interrupt48khz : std_logic;
 
 begin
 
@@ -81,6 +84,36 @@ process (i_clk)
 end process;
 tc <= '1' when timer_value = 99 else '0';
 
+
+
+-- proces za interupt handler za c na 48khz
+process (i_clk)
+	begin
+		if (in_rst = '0') then
+			timer_value_interrupt <= (others => '0');
+		elsif (rising_edge(i_clk)) then
+			if s_interrupt48khz = '1' then -- timer_value sam sebe sredjuje
+				timer_value_interrupt <= (others => '0');
+			else
+				timer_value_interrupt<= timer_value_interrupt + 1;
+			end if;
+		end if;
+end process;
+s_interrupt48khz <= '1' when timer_value_interrupt = 2083 else '0';
+
+process (i_clk)
+	begin
+		if (in_rst = '0') then
+			timer_value <= (others => '0');
+		elsif (rising_edge(i_clk)) then
+			if tc = '1' then -- timer_value sam sebe sredjuje
+				timer_value <= (others => '0');
+			else
+				timer_value<= timer_value + 1;
+			end if;
+		end if;
+end process;
+
 -- proces za o_strobe
 process (i_clk)
 	begin
@@ -108,6 +141,16 @@ process (i_clk)
 			o_clk <= '0';
 		elsif (rising_edge(i_clk)) then
 			o_clk <= s_clk;
+		end if;
+end process;
+
+-- proces za o_interrupt48khz
+process (i_clk)
+	begin
+		if (in_rst = '0') then
+			o_interrupt48khz <= '0';
+		elsif (rising_edge(i_clk)) then
+			o_interrupt48khz <= s_interrupt48khz;
 		end if;
 end process;
 

@@ -58,9 +58,10 @@ PORT S_AXI_AWREADY = AWREADY, DIR = O, BUS = S_AXI
 
 #USER PORTS
 PORT out_pwm = "", DIR = O
-PORT my_timer_irq			= "", DIR = O, SIGIS = INTERRUPT, SENSITIVITY = EDGE_RISING
+PORT my_timer_irq = "", DIR = O, SIGIS = INTERRUPT, SENSITIVITY = EDGE_RISING
 
 PORT o_strobe = "", DIR = O
 PORT o_clk = "", DIR = O
 PORT o_data = "", DIR = O
+PORT o_interrupt48khz = "", DIR = O, SIGIS = INTERRUPT, SENSITIVITY = EDGE_RISING
 END
