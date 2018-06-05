@@ -47,8 +47,9 @@ architecture Behavioral of DAC_8_bit is
 type state_type is ( IDLE, B7, CLK7, B6, CLK6, B5, CLK5, B4, CLK4, B3, CLK3, B2, CLK2, B1, CLK1, B0, CLK0, STROBE );
 
 signal current_s, next_s: state_type;
-signal timer_value: std_logic_vector(7 downto 0) := (others => '0');
-signal timer_value_interrupt: std_logic_vector(7 downto 0) := (others => '0');
+signal timer_value: std_logic_vector(7 downto 0);
+signal r_sample: std_logic_vector(7 downto 0);
+signal timer_value_interrupt: std_logic_vector(11 downto 0);
 signal s_flag: std_logic := '0';
 signal s_data: std_logic := '0';
 signal s_strobe: std_logic := '0';
@@ -202,7 +203,7 @@ begin
 end process;
 
 
-process(current_s, i_sample)
+process(current_s, r_sample)
 begin
 	case current_s is
 		when IDLE =>
@@ -212,67 +213,67 @@ begin
 		when B7 =>
 			s_clk <= '0';
 			s_strobe <= '0';
-			s_data <= i_sample(7);
+			s_data <= r_sample(7);
 		when CLK7 =>
 			s_clk <= '1';
 			s_strobe <= '0';
-			s_data <= i_sample(7);
+			s_data <= r_sample(7);
 		when B6 =>
 			s_clk <= '0';
 			s_strobe <= '0';
-			s_data <= i_sample(6);
+			s_data <= r_sample(6);
 		when CLK6 =>
 			s_clk <= '1';
 			s_strobe <= '0';
-			s_data <= i_sample(6);
+			s_data <= r_sample(6);
 		when B5 =>
 			s_clk <= '0';
 			s_strobe <= '0';
-			s_data <= i_sample(5);
+			s_data <= r_sample(5);
 		when CLK5 =>
 			s_clk <= '1';
 			s_strobe <= '0';
-			s_data <= i_sample(5);		
+			s_data <= r_sample(5);		
 		when B4 =>
 			s_clk <= '0';
 			s_strobe <= '0';
-			s_data <= i_sample(4);
+			s_data <= r_sample(4);
 		when CLK4 =>
 			s_clk <= '1';
 			s_strobe <= '0';
-			s_data <= i_sample(4);
+			s_data <= r_sample(4);
 		when B3 =>
 			s_clk <= '0';
 			s_strobe <= '0';
-			s_data <= i_sample(3);
+			s_data <= r_sample(3);
 		when CLK3 =>
 			s_clk <= '1';
 			s_strobe <= '0';
-			s_data <= i_sample(3);
+			s_data <= r_sample(3);
 		when B2 =>
 			s_clk <= '0';
 			s_strobe <= '0';
-			s_data <= i_sample(2);
+			s_data <= r_sample(2);
 		when CLK2 =>
 			s_clk <= '1';
 			s_strobe <= '0';
-			s_data <= i_sample(2);
+			s_data <= r_sample(2);
 		when B1 =>
 			s_clk <= '0';
 			s_strobe <= '0';
-			s_data <= i_sample(1);
+			s_data <= r_sample(1);
 		when CLK1 =>
 			s_clk <= '1';
 			s_strobe <= '0';
-			s_data <= i_sample(1);
+			s_data <= r_sample(1);
 		when B0 =>
 			s_clk <= '0';
 			s_strobe <= '0';
-			s_data <= i_sample(0);
+			s_data <= r_sample(0);
 		when CLK0 =>
 			s_clk <= '1';
 			s_strobe <= '0';
-			s_data <= i_sample(0);
+			s_data <= r_sample(0);
 		when STROBE =>
 			s_clk <= '0';
 			s_strobe <= '1';
@@ -280,6 +281,16 @@ begin
 	end case;
 end process;
 
+process (i_clk) 
+	begin
+		if (in_rst='0') then
+			r_sample <= (others => '0');
+		elsif (rising_edge(i_clk)) then 
+			if tc = '1' and current_s = IDLE then
+				r_sample <= i_sample(7 downto 0);
+			end if;
+	 end if;
+end process;
 
 end Behavioral;
 

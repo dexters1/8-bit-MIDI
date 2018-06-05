@@ -80,15 +80,15 @@ void send_to_dac(int x){
 
 }
 
-int cnt = 0;
+int cnt_1ms = 0;
 void buzz_interrupt_handler_1(void * baseaddr_p) {
 	 // 48kHz.
-
-	cnt++;
-
+#if 1
+	// 500Hz square.
+	cnt_1ms++;
 	static int sample = 100;
-	if(cnt == 48){
-		cnt = 0;
+	if(cnt_1ms == 48){
+		cnt_1ms = 0;
 
 		if(sample == 100){
 			sample = -100;
@@ -98,6 +98,9 @@ void buzz_interrupt_handler_1(void * baseaddr_p) {
 
 		send_to_dac(sample);
 	}
+#else
+	// Sine.
+#endif
 }
 
 
