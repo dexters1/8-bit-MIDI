@@ -49,6 +49,8 @@
 #include "fugue1.h"
 #include "sound.h"
 
+#include "dds.h"
+
 #define ONE 1000000
 
 #define WHICHSONG 1
@@ -81,9 +83,10 @@ void send_to_dac(int x){
 }
 
 int cnt_1ms = 0;
+u16 tunning_word = 0;
 void buzz_interrupt_handler_1(void * baseaddr_p) {
 	 // 48kHz.
-#if 1
+#if 0
 	// 500Hz square.
 	cnt_1ms++;
 	static int sample = 100;
@@ -100,6 +103,9 @@ void buzz_interrupt_handler_1(void * baseaddr_p) {
 	}
 #else
 	// Sine.
+	s8 sine = dds_next_sample(tunning_word);
+	send_to_dac(sine);
+
 #endif
 }
 
@@ -156,6 +162,8 @@ int main()
 
 	 // Test.
 	 send_to_dac(0);
+
+	tunning_word = dds_freq_to_tunning_word(1000, 48000);
 
 
 	 //set regs for tc for interrupt(note duration)
