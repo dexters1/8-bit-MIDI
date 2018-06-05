@@ -80,6 +80,26 @@ void send_to_dac(int x){
 
 }
 
+int cnt = 0;
+void buzz_interrupt_handler_1(void * baseaddr_p) {
+	 // 48kHz.
+
+	cnt++;
+
+	static int sample = 100;
+	if(cnt == 48){
+		cnt = 0;
+
+		if(sample == 100){
+			sample = -100;
+		}else{
+			sample = 100;
+		}
+
+		send_to_dac(sample);
+	}
+}
+
 
 void buzz_interrupt_handler_0(void * baseaddr_p) {
 
@@ -108,16 +128,8 @@ void buzz_interrupt_handler_0(void * baseaddr_p) {
 	  //clean reg2(1) to get out of processing state and set reg2(0) to enable timers
 
 
-	static int sample = 100;
-	if(sample == 100){
-		sample = -100;
-	}else{
-		sample = 100;
-	}
-
-	send_to_dac(sample);
-
 }
+
 
 void print(char *str);
 
@@ -161,16 +173,31 @@ int main()
 		  xil_printf("\r\nInterrupt controller initialized");
 
 	  // Connect buzz_interrupt_handler_0
-	  Status = XIntc_Connect (&Intc, XPAR_AXI_INTC_0_BUZZER_PER_0_MY_TIMER_IRQ_INTR,
-			  (XInterruptHandler) buzz_interrupt_handler_0,(void *)0);
+	Status = XIntc_Connect(&Intc, XPAR_AXI_INTC_0_BUZZER_PER_0_MY_TIMER_IRQ_INTR,
+			(XInterruptHandler) buzz_interrupt_handler_0, (void *) 0);
 	  if (Status != XST_SUCCESS)
 		  xil_printf ("\r\nRegistering MY_TIMER Interrupt Failed");
 	  else
 		  xil_printf("\r\nMY_TIMER Interrupt registered");
-	   //start the interrupt controller in real mode
+		Status = XIntc_Connect(&Intc, XPAR_AXI_INTC_0_BUZZER_PER_0_O_INTERRUPT48KHZ_INTR,
+				(XInterruptHandler) buzz_interrupt_handler_1, (void *) 0);
+		  if (Status != XST_SUCCESS)
+			  xil_printf ("\r\nRegistering MY_TIMER Interrupt Failed");
+		  else
+			  xil_printf("\r\nMY_TIMER Interrupt registered");
+
+
+	  //start the interrupt controller in real mode
 	   Status = XIntc_Start(&Intc, XIN_REAL_MODE);
+		  if (Status != XST_SUCCESS)
+			  xil_printf ("\r\nXIntc_Start Failed");
+		  else
+			  xil_printf("\r\XIntc_Start success");
+
 	   //enable interrupt controller
 	   XIntc_Enable (&Intc, XPAR_AXI_INTC_0_BUZZER_PER_0_MY_TIMER_IRQ_INTR);
+	   XIntc_Enable (&Intc, XPAR_AXI_INTC_0_BUZZER_PER_0_O_INTERRUPT48KHZ_INTR);
+
 	   microblaze_enable_interrupts();
 
 	   while (1){
