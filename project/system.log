@@ -11570,3 +11570,21 @@ Done writing filter settings to:
 	D:\RA60-2015\8-bit-MIDI\project\etc\system.filters
 Done writing Tab View settings to:
 	D:\RA60-2015\8-bit-MIDI\project\etc\system.gui
+Xilinx Platform Studio (XPS)
+Xilinx EDK 14.6 Build EDK_P.68d
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+
+********************************************************************************
+At Local date and time: Fri Jun 08 12:04:08 2018
+ make -f system.make exporttosdk started...
+make: Ništa za napraviti za `exporttosdk'.
+Done!
+
+********************************************************************************
+At Local date and time: Fri Jun 08 12:04:09 2018
+ xsdk.exe -hwspec D:\RA60-2015\8-bit-MIDI\project\SDK\SDK_Export\hw\system.xml started...
+Xilinx Software Development Kit
+Xilinx EDK 14.6 Build EDK_P.68d
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+Done!
